@@ -113,16 +113,12 @@ JOIN `coivid19.CovidVaccination` vac
 
 -- looking at total population vs vaccination
 
-<<<<<<< HEAD
 SELECT dea.continent, dea.location, dea.date, dea.population_density, vac.new_vaccinations
-=======
 SELECT dea.continent, dea.location, dea.date, population_density
->>>>>>> 60d69cca79918059f2006c338ea9682a98e4a189
 FROM `coivid19.CovidDeaths` dea
 JOIN `coivid19.CovidVaccination` vac
   ON dea.location = vac.location
   and dea.date = vac.date
-<<<<<<< HEAD
 WHERE dea.continent IS NOT NULL
 ORDER BY 1,2,3
 
@@ -141,7 +137,6 @@ JOIN `coivid19.CovidVaccination` vac
   and dea.date = vac.date
 WHERE dea.continent IS NOT NULL
 ORDER BY 1,2,3
+--
 
-=======
->>>>>>> 60d69cca79918059f2006c338ea9682a98e4a189
 
