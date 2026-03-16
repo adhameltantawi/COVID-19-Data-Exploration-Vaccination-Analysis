@@ -40,7 +40,7 @@ order by 1,2
 -- looking at countries with highest infection rate compared to population
 SELECT 
 location,
-population_density,
+population_density, 
 MAX(total_cases) AS MaxCases,
 SAFE_DIVIDE(MAX(total_cases), population_density)*100 AS precentPopulation
 FROM `intrepid-charge-485812-r5.coivid19.CovidDeaths`
@@ -112,5 +112,29 @@ JOIN `coivid19.CovidVaccination` vac
   and dea.date = vac.date
 
 -- looking at total population vs vaccination
+
+SELECT dea.continent, dea.location, dea.date, dea.population_density, vac.new_vaccinations
+FROM `coivid19.CovidDeaths` dea
+JOIN `coivid19.CovidVaccination` vac
+  ON dea.location = vac.location
+  and dea.date = vac.date
+WHERE dea.continent IS NOT NULL
+ORDER BY 1,2,3
+
+
+-- Calculates cumulative vaccinations per location
+
+SELECT dea.continent,
+  dea.location,
+  dea.date,
+  dea.population_density,
+  vac.new_vaccinations,
+  SUM(CAST (vac.new_vaccinations AS INT64)) OVER (partition by dea.location)
+FROM `coivid19.CovidDeaths` dea
+JOIN `coivid19.CovidVaccination` vac
+  ON dea.location = vac.location
+  and dea.date = vac.date
+WHERE dea.continent IS NOT NULL
+ORDER BY 1,2,3
 
 
