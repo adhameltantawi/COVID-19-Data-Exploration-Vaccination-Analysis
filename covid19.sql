@@ -159,7 +159,7 @@ JOIN `coivid19.CovidVaccination` vac
 WHERE dea.continent IS NOT NULL
 )
 
-SELECT *
+SELECT *, (RollingPeopleVaccinated/population_density)*100
 FROM PopvsVac
 ORDER BY location, date;
 
