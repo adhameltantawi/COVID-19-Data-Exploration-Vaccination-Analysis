@@ -108,9 +108,8 @@ covid-data-analysis/
 ├── 2_vaccinations_exploration.sql   ← JOIN + rolling vaccinations + CTE
 └── 3_views_and_temp_tables.sql      ← Temp table + CREATE VIEW for visualization
 │
-└── data/
-    ├── CovidDeaths.csv              ← Daily cases, deaths, hospitalization per country
-    └── CovidVaccination.csv         ← Daily vaccination rollout per country
+├── CovidDeaths.csv                  ← Daily cases, deaths, hospitalization per country
+└── CovidVaccination.csv             ← Daily vaccination rollout per country
 ```
 
 ---
