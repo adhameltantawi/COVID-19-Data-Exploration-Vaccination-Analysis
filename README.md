@@ -149,7 +149,7 @@ The dashboard was built on **4 pre-aggregated query outputs** from `covid_tablea
 ### Dashboard Preview
 
 <!-- FULL DASHBOARD — replace path if needed -->
-![COVID-19 Dashboard Overview](dashboard.png)
+![COVID-19 Dashboard Overview](images/dashboard.png)
 
 ---
 
