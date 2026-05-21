@@ -1,1 +1,9 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Force GitHub Linguist to detect .sql files and classify them as SQL
+*.sql linguist-detectable=true linguist-language=SQL
+
+# Ignore raw data files in language statistics
 *.csv linguist-vendored
+*.csv linguist-detectable=false
